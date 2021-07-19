@@ -9,7 +9,7 @@ public class FileIOUtil {
     public static List<String> tryGetContent(){
 
         try {
-            return Files.readAllLines(Paths.get("src/contacts.text"));
+            return Files.readAllLines(Paths.get("src/contacts.txt"));
         } catch(IOException e){
             System.out.println("Could not read from file.");
         }
