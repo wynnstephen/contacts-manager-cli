@@ -7,7 +7,7 @@ import java.util.*;
 
 public class ContactUtil {
 
-    public static List<String> getContacts(){
+    public static List<String> getContacts() {
         return new ArrayList<>();
     }
 
@@ -34,8 +34,27 @@ public class ContactUtil {
             //this adds and saves the info.
             System.out.println(firstN + lastN + " has been saved to your contact list.");
             //tells user that the info has been saved.
-        }catch (InputMismatchException | IOException e) {
+        } catch (InputMismatchException | IOException e) {
             System.out.println("Could not save. ");
         }
-        }
     }
+
+    //searchContact
+    public static void searchContact(Path path) {
+
+        try {
+            Path pathToFiles = Paths.get("ContactsManagerApp", "src", "contacts.text");
+            List<String> ContactList;
+            ContactList = Files.readAllLines(pathToFiles);
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter an existing name or number.");
+            String findContact = scanner.nextLine();
+        } catch (IOException e) {
+            System.out.println("No such thing.");
+        }
+
+
+    }
+
+
+}
