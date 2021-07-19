@@ -1,8 +1,11 @@
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class FileIOUtil {
 
@@ -17,12 +20,11 @@ public class FileIOUtil {
     }
     public static HashMap<String, Contact> getContacts(List<String> contactStrings){
         HashMap<String, Contact> contactsMap = new HashMap<>();
-        for (String contactString : contactStrings){
+        for (String contactString : contactStrings) {
             String[] arr = contactString.split(",");
             Contact contact = new Contact(arr[0], arr[1]);
             contactsMap.put(arr[0], contact);
         }
         return contactsMap;
     }
-//addContact
 }
