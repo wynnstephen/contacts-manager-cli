@@ -55,6 +55,5 @@ public class Contact {
     public String contactToString() {
         return this.fullName + " | "  + this.phoneNumber;
     }
-
 }
 
