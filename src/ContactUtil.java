@@ -66,14 +66,15 @@ public class ContactUtil {
         try {
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter a name");
-            String delete = sc.nextLine();
+            String delete = sc.next();
             List<String> lines = Files.readAllLines(Paths.get("src", "contacts.txt"));
             List<String> newList = new ArrayList<>();
             for (String line : lines){
                 if (line.contains(delete)){
                     newList.remove(delete);
+                    continue;
                 }
-                newList.add(line );
+                newList.add(line);
                 Files.write(Paths.get("src", "contacts.txt"), newList);
             }
 
